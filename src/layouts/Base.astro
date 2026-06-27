@@ -1,0 +1,55 @@
+---
+import '@fontsource/spectral/300.css';
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/500.css';
+import '@fontsource/space-mono/400.css';
+import '@fontsource/space-mono/700.css';
+import '../styles/global.css';
+import Masthead from '../components/Masthead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Hide the lede + nav-heavy masthead on interior pages. */
+  compact?: boolean;
+}
+
+const {
+  title,
+  description = 'A minimalist photo journal — light, water, and the long wait for weather.',
+  compact = false,
+} = Astro.props;
+
+const fullTitle = title ? `${title} — Jamm` : 'Jamm — Photographs';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#f1f1ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d0d0e" media="(prefers-color-scheme: dark)" />
+  </head>
+  <body>
+    <Masthead compact={compact} />
+    <main class="shell">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

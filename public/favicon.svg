@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .ink { fill: none; stroke: #18181a; }
+    .dot { fill: #18181a; stroke: none; }
+    @media (prefers-color-scheme: dark) {
+      .ink { stroke: #ededea; }
+      .dot { fill: #ededea; }
+    }
+  </style>
+  <rect class="ink" x="4.5" y="6.5" width="23" height="19" rx="2.5" stroke-width="2" />
+  <circle class="ink" cx="16" cy="16" r="5.5" stroke-width="2" />
+  <circle class="dot" cx="16" cy="16" r="1.6" />
+</svg>

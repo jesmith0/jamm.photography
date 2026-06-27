@@ -1,0 +1,107 @@
+---
+import { render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { getRoll, frameNo } from '../../lib/photos';
+
+export async function getStaticPaths() {
+  const roll = await getRoll();
+  const total = roll.length;
+  return roll.map((photo, i) => ({
+    params: { id: photo.id },
+    props: {
+      photo,
+      n: i + 1,
+      total,
+      // Roll is newest-first: the next item in the array is the older frame.
+      newer: roll[i - 1] ?? null,
+      older: roll[i + 1] ?? null,
+    },
+  }));
+}
+
+const { photo, n, total, newer, older } = Astro.props;
+const { data } = photo;
+const { Content } = await render(photo);
+
+const dateLabel = data.date.toLocaleDateString('en-GB', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+});
+
+const specs = (
+  [
+    ['Camera', data.camera],
+    ['Lens', data.lens],
+    ['Focal', data.focal],
+    ['Aperture', data.aperture],
+    ['Shutter', data.shutter],
+    ['ISO', data.iso],
+    ['Location', data.location],
+    ['Date', dateLabel],
+  ] as const
+).filter(([, value]) => Boolean(value)) as [string, string][];
+---
+
+<Base title={data.title} description={`${data.title} — ${data.location}.`} compact>
+  <article class="plate">
+    <a class="plate__back mono" href="/">← Index</a>
+
+    <div class="plate__media">
+      <Image
+        src={data.image}
+        alt={data.alt}
+        widths={[640, 960, 1280, 1600, 2000]}
+        sizes="(max-width: 78rem) 92vw, 1100px"
+        quality={82}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+
+    <header class="plate__head">
+      <p class="plate__no">{frameNo(n)}<small class="mono"> / {frameNo(total)}</small></p>
+      <div>
+        <h1 class="plate__title">{data.title}</h1>
+        <p class="plate__sub mono mono--tight">{data.location} · {dateLabel}</p>
+      </div>
+    </header>
+
+    <dl class="specs">
+      {
+        specs.map(([term, value]) => (
+          <div>
+            <dt>{term}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div class="notes">
+      <Content />
+    </div>
+
+    <nav class="turn" aria-label="More frames">
+      {
+        older ? (
+          <a class="turn--prev" href={`/photos/${older.id}/`}>
+            <span class="mono">← Older</span>
+            <span class="turn__title">{older.data.title}</span>
+          </a>
+        ) : (
+          <span />
+        )
+      }
+      {
+        newer && (
+          <a class="turn--next" href={`/photos/${newer.id}/`}>
+            <span class="mono">Newer →</span>
+            <span class="turn__title">{newer.data.title}</span>
+          </a>
+        )
+      }
+    </nav>
+  </article>
+</Base>

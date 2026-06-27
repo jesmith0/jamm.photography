@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { getRoll } from '../lib/photos';
+
+const roll = await getRoll();
+const count = roll.length;
+---
+
+<Base title="About" compact>
+  <section class="about">
+    <h1>On waiting for weather.</h1>
+    <p>
+      Jamm photographs quiet places — coastlines at the turn of the tide, fog that
+      arrives without warning, fields that go on longer than they should. The work is
+      less about the subject than the light that happens to be passing through it.
+    </p>
+    <p>
+      Everything here is shot on a small set of cameras and left mostly alone
+      afterwards. No drama, no rescue in the edit. If a frame needed saving, it didn't
+      make the roll.
+    </p>
+
+    <dl class="colophon">
+      <div>
+        <dt>Frames</dt>
+        <dd>{count} on the current roll</dd>
+      </div>
+      <div>
+        <dt>Working with</dt>
+        <dd>Film &amp; medium format, mostly</dd>
+      </div>
+      <div>
+        <dt>Set in</dt>
+        <dd>Spectral &amp; Space Mono</dd>
+      </div>
+      <div>
+        <dt>Built with</dt>
+        <dd><a href="https://astro.build">Astro</a></dd>
+      </div>
+      <div>
+        <dt>Contact</dt>
+        <dd><a href="mailto:hello@jamm.photography">hello@jamm.photography</a></dd>
+      </div>
+    </dl>
+  </section>
+</Base>

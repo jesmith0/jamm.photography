@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import Frame from '../components/Frame.astro';
+import { getRoll } from '../lib/photos';
+
+const roll = await getRoll();
+const total = roll.length;
+---
+
+<Base>
+  <section class="roll" aria-label="Photographs">
+    {roll.map((photo, i) => <Frame photo={photo} n={i + 1} total={total} />)}
+  </section>
+</Base>

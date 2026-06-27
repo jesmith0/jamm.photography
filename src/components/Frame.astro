@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import Exif from './Exif.astro';
+import { frameNo, exifLine, type Photo } from '../lib/photos';
+
+interface Props {
+  photo: Photo;
+  n: number;
+  total: number;
+}
+const { photo, n, total } = Astro.props;
+const { data } = photo;
+
+const dateLabel = data.date.toLocaleDateString('en-GB', {
+  day: '2-digit',
+  month: 'short',
+  year: 'numeric',
+});
+---
+
+<article class="frame">
+  <div class="frame__edge">
+    <p class="frame__no">
+      {frameNo(n)}<small>/ {frameNo(total)}</small>
+    </p>
+    <span class="frame__perf" aria-hidden="true"></span>
+  </div>
+
+  <div class="frame__body">
+    <a class="frame__link" href={`/photos/${photo.id}/`}>
+      <div class="frame__media">
+        <Image
+          src={data.image}
+          alt={data.alt}
+          widths={[420, 720, 1040, 1480]}
+          sizes="(max-width: 640px) 92vw, (max-width: 78rem) 68vw, 860px"
+          quality={76}
+          loading={n === 1 ? 'eager' : 'lazy'}
+          fetchpriority={n === 1 ? 'high' : 'auto'}
+        />
+      </div>
+      <div class="frame__caption">
+        <h2 class="frame__title">{data.title}</h2>
+        <span class="frame__place mono">{data.location}</span>
+      </div>
+    </a>
+    <div class="frame__caption" style="margin-top:0.35rem">
+      <Exif items={exifLine(data)} />
+      <time class="mono" datetime={data.date.toISOString()}>{dateLabel}</time>
+    </div>
+  </div>
+</article>
