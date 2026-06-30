@@ -1,37 +1,36 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getRoll } from '../lib/photos';
+import { getRolls } from '../lib/rolls';
 
-const roll = await getRoll();
-const count = roll.length;
+const rolls = await getRolls();
+const frames = rolls.reduce((n, r) => n + r.data.exposures.length, 0);
 ---
 
 <Base title="About" compact>
   <section class="about">
-    <h1>On waiting for weather.</h1>
+    <h1>On waiting for weather</h1>
     <p>
       Jamm photographs quiet places — coastlines at the turn of the tide, fog that
       arrives without warning, fields that go on longer than they should. The work is
       less about the subject than the light that happens to be passing through it.
     </p>
     <p>
-      Everything here is shot on a small set of cameras and left mostly alone
-      afterwards. No drama, no rescue in the edit. If a frame needed saving, it didn't
-      make the roll.
+      Each roll is shown whole, in the order it was shot, frame by frame. Nothing is
+      rescued in the edit. If an exposure needed saving, it didn't make the reel.
     </p>
 
     <dl class="colophon">
       <div>
-        <dt>Frames</dt>
-        <dd>{count} on the current roll</dd>
+        <dt>Rolls</dt>
+        <dd>{rolls.length} archived</dd>
       </div>
       <div>
-        <dt>Working with</dt>
-        <dd>Film &amp; medium format, mostly</dd>
+        <dt>Exposures</dt>
+        <dd>{frames} frames</dd>
       </div>
       <div>
         <dt>Set in</dt>
-        <dd>Spectral &amp; Space Mono</dd>
+        <dd>Space Grotesk &amp; Space Mono</dd>
       </div>
       <div>
         <dt>Built with</dt>

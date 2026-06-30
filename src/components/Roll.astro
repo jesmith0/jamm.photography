@@ -1,0 +1,22 @@
+---
+import Frame from './Frame.astro';
+import { inFrameOrder, type Roll } from '../lib/rolls';
+
+interface Props {
+  roll: Roll;
+}
+const { roll } = Astro.props;
+const exposures = inFrameOrder(roll.data.exposures);
+---
+
+<section class="roll" aria-label={`Roll ${roll.data.roll} — ${roll.data.title}`}>
+  <header class="roll__head">
+    <h2 class="roll__name">Roll <b>{roll.data.roll}</b> · {roll.data.title}</h2>
+    <span class="roll__count">{exposures.length} Exp</span>
+  </header>
+  <div class="roll__viewport">
+    <div class="strip">
+      {exposures.map((e) => <Frame exposure={e} roll={roll.data.roll} />)}
+    </div>
+  </div>
+</section>

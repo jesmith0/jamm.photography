@@ -1,14 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
-import Frame from '../components/Frame.astro';
-import { getRoll } from '../lib/photos';
+import Roll from '../components/Roll.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { getRolls } from '../lib/rolls';
 
-const roll = await getRoll();
-const total = roll.length;
+const rolls = await getRolls();
 ---
 
 <Base>
-  <section class="roll" aria-label="Photographs">
-    {roll.map((photo, i) => <Frame photo={photo} n={i + 1} total={total} />)}
-  </section>
+  <div class="reel">
+    {rolls.map((roll) => <Roll roll={roll} />)}
+  </div>
+  <Lightbox />
 </Base>

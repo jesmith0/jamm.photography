@@ -1,9 +1,4 @@
 ---
-interface Props {
-  compact?: boolean;
-}
-const { compact = false } = Astro.props;
-
 const path = Astro.url.pathname;
 const isIndex = path === '/';
 const links = [
@@ -11,34 +6,23 @@ const links = [
   { href: '/about', label: 'About' },
 ];
 
-// The wordmark is the page's <h1> only on the homepage; interior pages own
-// their own <h1>, so the wordmark steps down to a <p> there.
-const Wordmark = isIndex ? 'h1' : 'p';
+// The brand link is the page's <h1> only on the homepage.
+const Brand = isIndex ? 'h1' : 'p';
 ---
 
 <header class="masthead">
-  <div class="shell">
-    <div class="masthead__top">
-      <Wordmark class="wordmark">
-        <a href="/" aria-label="Jamm — home">Jamm<sup>.photography</sup></a>
-      </Wordmark>
-      <nav class="nav mono" aria-label="Primary">
-        {
-          links.map((l) => (
-            <a href={l.href} aria-current={l.href === path ? 'page' : undefined}>
-              {l.label}
-            </a>
-          ))
-        }
-      </nav>
-    </div>
-
-    {
-      !compact && isIndex && (
-        <p class="masthead__lede">
-          A working journal of still places — light, water, and the long wait for weather.
-        </p>
-      )
-    }
+  <div class="shell masthead__row">
+    <Brand class="brand">
+      <a href="/">jamm.photography</a>
+    </Brand>
+    <nav class="nav mono" aria-label="Primary">
+      {
+        links.map((l) => (
+          <a href={l.href} aria-current={l.href === path ? 'page' : undefined}>
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
   </div>
 </header>

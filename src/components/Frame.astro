@@ -1,52 +1,42 @@
 ---
-import { Image } from 'astro:assets';
-import Exif from './Exif.astro';
-import { frameNo, exifLine, type Photo } from '../lib/photos';
+import { Image, getImage } from 'astro:assets';
+import { pad2, type Exposure } from '../lib/rolls';
 
 interface Props {
-  photo: Photo;
-  n: number;
-  total: number;
+  exposure: Exposure;
+  roll: string;
 }
-const { photo, n, total } = Astro.props;
-const { data } = photo;
+const { exposure: e, roll } = Astro.props;
 
-const dateLabel = data.date.toLocaleDateString('en-GB', {
-  day: '2-digit',
-  month: 'short',
-  year: 'numeric',
-});
+// Full-size optimised source for the modal — loaded on demand by the lightbox,
+// and used as the link target so clicking still works with JavaScript off.
+const full = await getImage({ src: e.image, width: 1600, format: 'webp' });
+
+const dateLabel = e.date
+  ? e.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+  : '';
 ---
 
-<article class="frame">
-  <div class="frame__edge">
-    <p class="frame__no">
-      {frameNo(n)}<small>/ {frameNo(total)}</small>
-    </p>
-    <span class="frame__perf" aria-hidden="true"></span>
-  </div>
-
-  <div class="frame__body">
-    <a class="frame__link" href={`/photos/${photo.id}/`}>
-      <div class="frame__media">
-        <Image
-          src={data.image}
-          alt={data.alt}
-          widths={[420, 720, 1040, 1480]}
-          sizes="(max-width: 640px) 92vw, (max-width: 78rem) 68vw, 860px"
-          quality={76}
-          loading={n === 1 ? 'eager' : 'lazy'}
-          fetchpriority={n === 1 ? 'high' : 'auto'}
-        />
-      </div>
-      <div class="frame__caption">
-        <h2 class="frame__title">{data.title}</h2>
-        <span class="frame__place mono">{data.location}</span>
-      </div>
-    </a>
-    <div class="frame__caption" style="margin-top:0.35rem">
-      <Exif items={exifLine(data)} />
-      <time class="mono" datetime={data.date.toISOString()}>{dateLabel}</time>
-    </div>
-  </div>
-</article>
+<a
+  class="frame"
+  href={full.src}
+  data-full={full.src}
+  data-alt={e.alt}
+  data-title={e.title}
+  data-roll={roll}
+  data-frame={pad2(e.frame)}
+  data-location={e.location}
+  data-date={dateLabel}
+  data-camera={e.camera ?? ''}
+  data-lens={e.lens ?? ''}
+  data-focal={e.focal ?? ''}
+  data-aperture={e.aperture ?? ''}
+  data-shutter={e.shutter ?? ''}
+  data-iso={e.iso ?? ''}
+  aria-label={`Roll ${roll}, exposure ${pad2(e.frame)} — ${e.title}. Open full size.`}
+>
+  <span class="frame__media">
+    <Image src={e.image} alt={e.alt} height={480} loading="lazy" />
+  </span>
+  <span class="frame__no">{pad2(e.frame)}</span>
+</a>
