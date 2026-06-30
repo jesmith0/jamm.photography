@@ -48,7 +48,6 @@ exposures:
     date: 2026-05-01
     camera: 'Leica M6'          # the technical fields are optional
     lens: '35mm Summicron'
-    focal: '35mm'
     aperture: 'f/8'
     shutter: '1/250'
     iso: '100'

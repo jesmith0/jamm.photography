@@ -25,7 +25,7 @@ export function pad2(n: number): string {
 
 /** "f/8 · 1/250 · ISO 100" — only the parts that exist. */
 export function exifLine(e: Exposure): string[] {
-  return [e.focal, e.aperture, e.shutter, e.iso ? `ISO ${e.iso}` : undefined].filter(
+  return [e.aperture, e.shutter, e.iso ? `ISO ${e.iso}` : undefined].filter(
     (x): x is string => Boolean(x),
   );
 }

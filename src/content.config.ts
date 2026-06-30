@@ -21,7 +21,6 @@ const rolls = defineCollection({
           // The technical record — all optional, shown in the modal in mono.
           camera: z.string().optional(),
           lens: z.string().optional(),
-          focal: z.string().optional(),
           aperture: z.string().optional(),
           shutter: z.string().optional(),
           iso: z.string().optional(),

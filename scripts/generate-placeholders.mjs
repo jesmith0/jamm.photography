@@ -95,7 +95,6 @@ const ROLLS = [
     sat: 0.24,
     camera: 'Hasselblad 500C/M',
     lens: '80mm Planar',
-    focal: '80mm',
     locations: ['Morecambe Bay, England', 'Point Reyes, California', 'Ólafsfjörður, Iceland', 'Achill Island, Ireland', 'Cape Cod, Massachusetts', 'Jæren, Norway', 'Tofino, Canada', 'Sylt, Germany'],
   },
   {
@@ -107,7 +106,6 @@ const ROLLS = [
     sat: 0.2,
     camera: 'Leica M6',
     lens: '35mm Summicron',
-    focal: '35mm',
     locations: ['Skåne, Sweden', 'Hardangervidda, Norway', 'Castile, Spain', 'Burgundy, France', 'Salar de Uyuni, Bolivia', 'Hokkaidō, Japan', 'Pampas, Argentina', 'Tuscany, Italy'],
   },
 ];
@@ -160,7 +158,6 @@ for (const spec of ROLLS) {
     lines.push(`    date: ${spec.date}`);
     lines.push(`    camera: ${yamlStr(spec.camera)}`);
     lines.push(`    lens: ${yamlStr(spec.lens)}`);
-    lines.push(`    focal: ${yamlStr(spec.focal)}`);
     lines.push(`    aperture: ${yamlStr(aperture)}`);
     lines.push(`    shutter: ${yamlStr(shutter)}`);
     lines.push(`    iso: ${yamlStr(iso)}`);

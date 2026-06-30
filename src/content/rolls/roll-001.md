@@ -1,7 +1,7 @@
 ---
-roll: '011'
-title: 'Interior'
-date: 2025-11-05
+roll: '001'
+title: 'San Diego 1'
+date: 2026-03-08
 order: 1
 exposures:
   - frame: 1
@@ -12,9 +12,8 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
-    aperture: 'f/4'
-    shutter: '1/60'
+    aperture: 'auto'
+    shutter: 'auto'
     iso: '50'
   - frame: 2
     title: 'High Rise'
@@ -24,7 +23,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/125'
     iso: '320'
@@ -36,7 +34,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/2000'
     iso: '50'
@@ -48,7 +45,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/250'
     iso: '100'
@@ -60,7 +56,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/16'
     shutter: '1/1000'
     iso: '200'
@@ -72,7 +67,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/8'
     shutter: '1/500'
     iso: '320'
@@ -84,7 +78,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/60'
     iso: '320'
@@ -96,7 +89,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/4'
     shutter: '1/2000'
     iso: '320'
@@ -108,7 +100,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/8'
     shutter: '1/60'
     iso: '200'
@@ -120,7 +111,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/8'
     shutter: '1/250'
     iso: '100'
@@ -132,7 +122,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/1000'
     iso: '320'
@@ -144,7 +133,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/1000'
     iso: '320'
@@ -156,7 +144,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/60'
     iso: '50'
@@ -168,7 +155,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/16'
     shutter: '1/60'
     iso: '100'
@@ -180,7 +166,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/16'
     shutter: '1/60'
     iso: '50'
@@ -192,7 +177,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/125'
     iso: '200'
@@ -204,7 +188,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/4'
     shutter: '1/2000'
     iso: '100'
@@ -216,7 +199,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/2.8'
     shutter: '1/125'
     iso: '200'
@@ -228,7 +210,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/8'
     shutter: '1/60'
     iso: '200'
@@ -240,7 +221,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/8'
     shutter: '1/1000'
     iso: '200'
@@ -252,7 +232,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/250'
     iso: '100'
@@ -264,7 +243,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/16'
     shutter: '1/60'
     iso: '50'
@@ -276,7 +254,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/4'
     shutter: '1/250'
     iso: '100'
@@ -288,7 +265,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/125'
     iso: '400'
@@ -300,7 +276,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/1000'
     iso: '50'
@@ -312,7 +287,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/16'
     shutter: '1/125'
     iso: '200'
@@ -324,7 +298,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/8'
     shutter: '1/125'
     iso: '320'
@@ -336,7 +309,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/2.8'
     shutter: '1/60'
     iso: '320'
@@ -348,7 +320,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/125'
     iso: '400'
@@ -360,7 +331,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/2000'
     iso: '50'
@@ -372,7 +342,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/60'
     iso: '320'
@@ -384,7 +353,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/11'
     shutter: '1/2000'
     iso: '200'
@@ -396,7 +364,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/500'
     iso: '100'
@@ -408,7 +375,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/1000'
     iso: '400'
@@ -420,7 +386,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/250'
     iso: '400'
@@ -432,7 +397,6 @@ exposures:
     date: 2025-11-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
-    focal: '35mm'
     aperture: 'f/5.6'
     shutter: '1/500'
     iso: '200'
