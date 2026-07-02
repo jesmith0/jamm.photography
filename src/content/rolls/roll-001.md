@@ -4,6 +4,28 @@ title: 'San Diego 1'
 date: 2026-03-08
 order: 1
 exposures:
+  - frame: 0
+    title: 'Plain Passage'
+    image: ../../assets/photos/roll-001/0.jpg
+    alt: 'Interior roll, exposure 35 — an atmospheric study at Castile, Spain.'
+    location: 'San Diego, California'
+    date: 2025-11-05
+    camera: 'Minolta X-700'
+    lens: '45mm Stock'
+    aperture: 'f/5.6'
+    shutter: '1/250'
+    iso: '400'
+  - frame: 00
+    title: 'Bare Tide'
+    image: ../../assets/photos/roll-001/00.jpg
+    alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
+    location: 'San Diego, California'
+    date: 2025-11-05
+    camera: 'Minolta X-700'
+    lens: '45mm Stock'
+    aperture: 'f/5.6'
+    shutter: '1/500'
+    iso: '200'
   - frame: 1
     title: 'Low Salt'
     image: ../../assets/photos/roll-001/01.jpg
@@ -378,26 +400,4 @@ exposures:
     aperture: 'f/5.6'
     shutter: '1/1000'
     iso: '400'
-  - frame: 35
-    title: 'Plain Passage'
-    image: ../../assets/photos/roll-001/35.jpg
-    alt: 'Interior roll, exposure 35 — an atmospheric study at Castile, Spain.'
-    location: 'San Diego, California'
-    date: 2025-11-05
-    camera: 'Minolta X-700'
-    lens: '45mm Stock'
-    aperture: 'f/5.6'
-    shutter: '1/250'
-    iso: '400'
-  - frame: 36
-    title: 'Bare Tide'
-    image: ../../assets/photos/roll-001/36.jpg
-    alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
-    location: 'San Diego, California'
-    date: 2025-11-05
-    camera: 'Minolta X-700'
-    lens: '45mm Stock'
-    aperture: 'f/5.6'
-    shutter: '1/500'
-    iso: '200'
 ---

@@ -4,6 +4,28 @@ title: 'San Diego 0'
 date: 2026-03-03
 order: 1
 exposures:
+  - frame: 0
+    title: 'Bare Tide'
+    image: ../../assets/photos/roll-000/0.jpg
+    alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
+    location: 'San Diego, California'
+    date: 2025-11-05
+    camera: 'Minolta X-700'
+    lens: '45mm Stock'
+    aperture: 'f/5.6'
+    shutter: '1/500'
+    iso: '200'
+  - frame: 00
+    title: 'Bare Tide'
+    image: ../../assets/photos/roll-000/00.jpg
+    alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
+    location: 'San Diego, California'
+    date: 2025-11-05
+    camera: 'Minolta X-700'
+    lens: '45mm Stock'
+    aperture: 'f/5.6'
+    shutter: '1/500'
+    iso: '200'
   - frame: 1
     title: 'Low Salt'
     image: ../../assets/photos/roll-000/01.jpg
@@ -392,28 +414,6 @@ exposures:
   - frame: 36
     title: 'Bare Tide'
     image: ../../assets/photos/roll-000/36.jpg
-    alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
-    location: 'San Diego, California'
-    date: 2025-11-05
-    camera: 'Minolta X-700'
-    lens: '45mm Stock'
-    aperture: 'f/5.6'
-    shutter: '1/500'
-    iso: '200'
-  - frame: 37
-    title: 'Bare Tide'
-    image: ../../assets/photos/roll-000/37.jpg
-    alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
-    location: 'San Diego, California'
-    date: 2025-11-05
-    camera: 'Minolta X-700'
-    lens: '45mm Stock'
-    aperture: 'f/5.6'
-    shutter: '1/500'
-    iso: '200'
-  - frame: 38
-    title: 'Bare Tide'
-    image: ../../assets/photos/roll-000/38.jpg
     alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
     location: 'San Diego, California'
     date: 2025-11-05
