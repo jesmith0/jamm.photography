@@ -114,7 +114,7 @@
     });
 
     // deep link: /#r012f07
-    const m = location.hash.match(/^#r(.+)f(\d+)$/);
+    const m = location.hash.match(/^#r(.+)f(-?\d+)$/);
     if (m) {
       const idx = triggers.findIndex(
         (t) => t.dataset.roll === m[1] && Number(t.dataset.frame) === Number(m[2]),

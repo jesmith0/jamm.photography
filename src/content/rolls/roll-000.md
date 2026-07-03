@@ -4,9 +4,9 @@ title: 'San Diego 0'
 date: 2026-03-03
 order: 1
 exposures:
-  - frame: 0
+  - frame: -1
     title: 'Bare Tide'
-    image: ../../assets/photos/roll-000/0.jpg
+    image: ../../assets/photos/roll-000/_1.jpg
     alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
     location: 'San Diego, California'
     date: 2025-11-05
@@ -15,7 +15,7 @@ exposures:
     aperture: 'f/5.6'
     shutter: '1/500'
     iso: '200'
-  - frame: 00
+  - frame: 0
     title: 'Bare Tide'
     image: ../../assets/photos/roll-000/00.jpg
     alt: 'Interior roll, exposure 36 — an atmospheric study at Burgundy, France.'
