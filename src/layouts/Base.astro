@@ -7,6 +7,7 @@ import '@fontsource/space-mono/700.css';
 import '../styles/global.css';
 import Masthead from '../components/Masthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title?: string;
@@ -50,5 +51,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <SiteFooter />
+    <Analytics />
   </body>
 </html>
