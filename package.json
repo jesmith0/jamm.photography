@@ -12,7 +12,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "images": "node scripts/generate-placeholders.mjs"
+    "images": "node scripts/generate-placeholders.mjs",
+    "new-roll": "node scripts/new-roll.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
