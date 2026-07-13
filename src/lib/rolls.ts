@@ -3,13 +3,13 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 export type Roll = CollectionEntry<'rolls'>;
 export type Exposure = Roll['data']['exposures'][number];
 
-/** Rolls, newest first (by manual `order`, then date). */
+/** Rolls, newest first (by roll ID). */
 export async function getRolls(): Promise<Roll[]> {
   const rolls = await getCollection('rolls');
   return rolls.sort((a, b) => {
-    const byOrder = (b.data.order ?? 0) - (a.data.order ?? 0);
-    if (byOrder !== 0) return byOrder;
-    return b.data.date.valueOf() - a.data.date.valueOf();
+    const aId = parseInt(a.data.roll, 10);
+    const bId = parseInt(b.data.roll, 10);
+    return bId - aId;
   });
 }
 
