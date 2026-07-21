@@ -6,8 +6,28 @@
 
 <dialog id="lightbox" class="lightbox" aria-label="Photograph viewer">
   <button class="lightbox__close" data-lb-close type="button" aria-label="Close (Esc)">✕</button>
-  <button class="lightbox__nav lightbox__nav--prev" data-lb-prev type="button" aria-label="Previous exposure">‹</button>
-  <button class="lightbox__nav lightbox__nav--next" data-lb-next type="button" aria-label="Next exposure">›</button>
+  <button class="lightbox__nav lightbox__nav--prev" data-lb-prev type="button" aria-label="Previous exposure">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        d="M15 5 L8 12 L15 19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" data-lb-next type="button" aria-label="Next exposure">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        d="M9 5 L16 12 L9 19"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </button>
 
   <div class="lightbox__inner">
     <figure class="lightbox__figure">
@@ -34,6 +54,7 @@
     const prevBtn = dialog.querySelector('[data-lb-prev]') as HTMLButtonElement;
     const nextBtn = dialog.querySelector('[data-lb-next]') as HTMLButtonElement;
     const closeBtn = dialog.querySelector('[data-lb-close]') as HTMLButtonElement;
+    const figure = dialog.querySelector('.lightbox__figure') as HTMLElement;
 
     // Location is shown under the title, so it's not repeated here.
     const SPECS: [string, string][] = [
@@ -98,6 +119,41 @@
     closeBtn.addEventListener('click', () => dialog.close());
     prevBtn.addEventListener('click', () => step(-1));
     nextBtn.addEventListener('click', () => step(1));
+
+    // swipe left/right over the photo to step through the roll — touch and
+    // pen only, so a mouse drag still just falls through to backdrop-click-
+    // to-close and text selection in the meta panel is untouched
+    const SWIPE_THRESHOLD = 40;
+    let dragId: number | null = null;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragDeltaX = 0;
+
+    figure.addEventListener('pointerdown', (ev) => {
+      if (ev.pointerType === 'mouse') return;
+      dragId = ev.pointerId;
+      dragStartX = ev.clientX;
+      dragStartY = ev.clientY;
+      dragDeltaX = 0;
+    });
+    figure.addEventListener('pointermove', (ev) => {
+      if (dragId !== ev.pointerId) return;
+      dragDeltaX = ev.clientX - dragStartX;
+      const deltaY = ev.clientY - dragStartY;
+      if (Math.abs(dragDeltaX) > Math.abs(deltaY)) {
+        img.style.transition = 'none';
+        img.style.transform = `translateX(${dragDeltaX}px)`;
+      }
+    });
+    const endDrag = (ev: PointerEvent) => {
+      if (dragId !== ev.pointerId) return;
+      dragId = null;
+      img.style.transition = '';
+      img.style.transform = '';
+      if (Math.abs(dragDeltaX) > SWIPE_THRESHOLD) step(dragDeltaX < 0 ? 1 : -1);
+    };
+    figure.addEventListener('pointerup', endDrag);
+    figure.addEventListener('pointercancel', endDrag);
 
     // click the dark area outside the content to close
     dialog.addEventListener('click', (ev) => {

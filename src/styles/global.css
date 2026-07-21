@@ -267,10 +267,11 @@ button {
    Lightbox — a fixed dark overlay, independent of page theme
    ============================================================ */
 .lightbox {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
+  /* inset (not width/height %) so the box always matches the true viewport,
+     even where 100% would resolve against a taller layout viewport than
+     what's visible (e.g. under a mobile browser's collapsing toolbar) */
+  position: fixed;
+  inset: 0;
   margin: 0;
   border: 0;
   /* generous side padding keeps content clear of the edge nav arrows */
@@ -307,6 +308,9 @@ button {
   width: auto;
   height: auto;
   object-fit: contain;
+  /* let vertical scroll/pinch pass through natively; horizontal drags are
+     read by the swipe-to-navigate handler in Lightbox.astro instead */
+  touch-action: pan-y;
 }
 .lightbox__meta {
   align-self: start;
@@ -363,14 +367,17 @@ button {
   text-align: right;
 }
 
-/* controls — fixed to the viewport edges (works in the top layer) */
+/* controls — anchored to the dialog's own box, which fills the viewport via
+   `inset: 0` above; kept off position:fixed so they can't be clipped by
+   viewport-height quirks (e.g. a mobile browser's collapsing toolbar) or
+   engine-specific handling of fixed descendants inside a modal's top layer */
 .lightbox__close,
 .lightbox__nav {
-  position: fixed;
+  position: absolute;
   color: #cfcfcf;
-  font-family: var(--mono);
   display: grid;
   place-items: center;
+  overflow: visible;
   transition:
     color 0.2s var(--ease),
     opacity 0.2s var(--ease);
@@ -380,10 +387,11 @@ button {
   color: #fff;
 }
 .lightbox__close {
-  top: clamp(0.75rem, 2vw, 1.5rem);
-  right: clamp(0.75rem, 2vw, 1.5rem);
+  top: max(clamp(0.75rem, 2vw, 1.5rem), env(safe-area-inset-top));
+  right: max(clamp(0.75rem, 2vw, 1.5rem), env(safe-area-inset-right));
   width: 2.5rem;
   height: 2.5rem;
+  font-family: var(--mono);
   font-size: 1.1rem;
 }
 .lightbox__nav {
@@ -391,14 +399,18 @@ button {
   transform: translateY(-50%);
   width: 3rem;
   height: 3rem;
-  font-size: 2rem;
-  line-height: 1;
+}
+.lightbox__nav svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+  overflow: visible;
 }
 .lightbox__nav--prev {
-  left: clamp(0.25rem, 1.5vw, 1.25rem);
+  left: max(clamp(0.5rem, 2vw, 1.5rem), env(safe-area-inset-left));
 }
 .lightbox__nav--next {
-  right: clamp(0.25rem, 1.5vw, 1.25rem);
+  right: max(clamp(0.5rem, 2vw, 1.5rem), env(safe-area-inset-right));
 }
 .lightbox__nav:disabled {
   opacity: 0.2;
@@ -418,7 +430,7 @@ button {
   }
   .lightbox__nav {
     top: auto;
-    bottom: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
     transform: none;
   }
 }
