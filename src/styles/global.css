@@ -267,11 +267,19 @@ button {
    Lightbox — a fixed dark overlay, independent of page theme
    ============================================================ */
 .lightbox {
-  /* inset (not width/height %) so the box always matches the true viewport,
-     even where 100% would resolve against a taller layout viewport than
-     what's visible (e.g. under a mobile browser's collapsing toolbar) */
+  /* explicit size (not just inset: 0) — <dialog>'s UA default is
+     width/height: fit-content, which inset alone doesn't override; without
+     this the box shrink-wraps to its content and sticks to the top-left
+     corner instead of filling the viewport */
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  /* the UA stylesheet caps a modal dialog at `calc(100% - 2em - 6px)` —
+     override it or the box (and anything anchored to it) sits ~38px short */
+  max-width: none;
+  max-height: none;
   margin: 0;
   border: 0;
   /* generous side padding keeps content clear of the edge nav arrows */
@@ -283,6 +291,15 @@ button {
 .lightbox::backdrop {
   background: rgba(6, 6, 6, 0.95);
 }
+.lightbox:focus,
+.lightbox:focus-visible {
+  /* the dialog itself holds focus between/after arrow-key steps (see
+     Lightbox.astro) — an outline ringing the whole viewport isn't useful */
+  outline: none;
+}
+.lightbox__controlbar {
+  display: none;
+}
 .lightbox[open] {
   display: flex;
   align-items: center;
@@ -293,7 +310,9 @@ button {
   grid-template-columns: minmax(0, 1fr) minmax(230px, 300px);
   align-items: center;
   gap: clamp(1.25rem, 3vw, 2.5rem);
-  width: 100%;
+  /* width: auto (not 100%) — the image+meta pair sizes to its own content
+     so the flex centering above centers the pair as a unit, rather than
+     stretching edge-to-edge and leaving the photo looking left-aligned */
   max-width: min(1400px, 100%);
   max-height: 100%;
 }
@@ -419,6 +438,8 @@ button {
 
 @media (max-width: 760px) {
   .lightbox__inner {
+    /* stacked layout wants the full screen width, unlike the desktop pair */
+    width: 100%;
     grid-template-columns: 1fr;
     align-content: start;
     gap: 1rem;
@@ -428,10 +449,35 @@ button {
   .lightbox__img {
     max-height: 64vh;
   }
+
+  /* a solid backing behind the bottom control row — without it the
+     scrollable meta text/photo shows through and reads as visual noise
+     right under the buttons */
+  .lightbox__controlbar {
+    display: block;
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: calc(max(1rem, env(safe-area-inset-bottom)) + 3rem + 1rem);
+    background: #0a0a0a;
+    border-top: 1px solid #262626;
+  }
+
+  /* controls move to one row anchored along the bottom edge: prev at the
+     left, next at the right, close centred between them */
   .lightbox__nav {
     top: auto;
     bottom: max(1rem, env(safe-area-inset-bottom));
     transform: none;
+  }
+  .lightbox__close {
+    top: auto;
+    right: auto;
+    left: 50%;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3rem;
   }
 }
 
