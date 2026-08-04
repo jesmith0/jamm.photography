@@ -1,13 +1,13 @@
 ---
 roll: '002'
-title: 'New Mexico'
+title: 'Atlanta and New Mexico'
 date: 2026-04-03
 exposures:
   - frame: 0
     title: 'Preroll 1'
     image: ../../assets/photos/roll-002/00.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -18,7 +18,7 @@ exposures:
     title: 'Frame 1'
     image: ../../assets/photos/roll-002/01.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -29,7 +29,7 @@ exposures:
     title: 'Frame 2'
     image: ../../assets/photos/roll-002/02.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Ocala, Florida'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -40,7 +40,7 @@ exposures:
     title: 'Frame 3'
     image: ../../assets/photos/roll-002/03.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Ocala, Florida'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -51,7 +51,7 @@ exposures:
     title: 'Frame 4'
     image: ../../assets/photos/roll-002/04.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Ocala, Florida'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -62,7 +62,7 @@ exposures:
     title: 'Frame 5'
     image: ../../assets/photos/roll-002/05.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Ocala, Florida'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -73,7 +73,7 @@ exposures:
     title: 'Frame 6'
     image: ../../assets/photos/roll-002/06.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Ocala, Florida'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -84,7 +84,7 @@ exposures:
     title: 'Frame 7'
     image: ../../assets/photos/roll-002/07.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -95,7 +95,7 @@ exposures:
     title: 'Frame 8'
     image: ../../assets/photos/roll-002/08.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -106,7 +106,7 @@ exposures:
     title: 'Frame 9'
     image: ../../assets/photos/roll-002/09.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -117,7 +117,7 @@ exposures:
     title: 'Frame 10'
     image: ../../assets/photos/roll-002/10.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -128,7 +128,7 @@ exposures:
     title: 'Frame 11'
     image: ../../assets/photos/roll-002/11.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -139,7 +139,7 @@ exposures:
     title: 'Frame 12'
     image: ../../assets/photos/roll-002/12.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -150,7 +150,7 @@ exposures:
     title: 'Frame 13'
     image: ../../assets/photos/roll-002/13.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -161,7 +161,7 @@ exposures:
     title: 'Frame 14'
     image: ../../assets/photos/roll-002/14.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -172,7 +172,7 @@ exposures:
     title: 'Frame 15'
     image: ../../assets/photos/roll-002/15.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -183,7 +183,7 @@ exposures:
     title: 'Frame 16'
     image: ../../assets/photos/roll-002/16.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -194,7 +194,7 @@ exposures:
     title: 'Frame 17'
     image: ../../assets/photos/roll-002/17.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -205,7 +205,7 @@ exposures:
     title: 'Frame 18'
     image: ../../assets/photos/roll-002/18.jpg
     alt: ''
-    location: 'Ojo Caliente, New Mexico'
+    location: 'Atlanta, Georgia'
     date: 2026-04-03
     camera: 'Minolta X-700'
     lens: '45mm Stock'

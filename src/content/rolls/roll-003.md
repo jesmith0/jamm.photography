@@ -227,7 +227,7 @@ exposures:
     title: 'Frame 19'
     image: ../../assets/photos/roll-003/19.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Amelia Island, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -238,7 +238,7 @@ exposures:
     title: 'Frame 20'
     image: ../../assets/photos/roll-003/20.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Amelia Island, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -249,7 +249,7 @@ exposures:
     title: 'Frame 21'
     image: ../../assets/photos/roll-003/21.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Amelia Island, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -260,7 +260,7 @@ exposures:
     title: 'Frame 22'
     image: ../../assets/photos/roll-003/22.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Amelia Island, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -271,7 +271,7 @@ exposures:
     title: 'Frame 23'
     image: ../../assets/photos/roll-003/23.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -282,7 +282,7 @@ exposures:
     title: 'Frame 24'
     image: ../../assets/photos/roll-003/24.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -293,7 +293,7 @@ exposures:
     title: 'Frame 25'
     image: ../../assets/photos/roll-003/25.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -304,7 +304,7 @@ exposures:
     title: 'Frame 26'
     image: ../../assets/photos/roll-003/26.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -315,7 +315,7 @@ exposures:
     title: 'Frame 27'
     image: ../../assets/photos/roll-003/27.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -326,7 +326,7 @@ exposures:
     title: 'Frame 28'
     image: ../../assets/photos/roll-003/28.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -337,7 +337,7 @@ exposures:
     title: 'Frame 29'
     image: ../../assets/photos/roll-003/29.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -348,7 +348,7 @@ exposures:
     title: 'Frame 30'
     image: ../../assets/photos/roll-003/30.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -359,7 +359,7 @@ exposures:
     title: 'Frame 31'
     image: ../../assets/photos/roll-003/31.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -370,7 +370,7 @@ exposures:
     title: 'Frame 32'
     image: ../../assets/photos/roll-003/32.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -381,7 +381,7 @@ exposures:
     title: 'Frame 33'
     image: ../../assets/photos/roll-003/33.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -392,7 +392,7 @@ exposures:
     title: 'Frame 34'
     image: ../../assets/photos/roll-003/34.jpg
     alt: ''
-    location: 'Atlanta, Georgia'
+    location: 'Ocala, Florida'
     date: 2026-06-08
     camera: 'Minolta X-700'
     lens: '45mm Stock'
