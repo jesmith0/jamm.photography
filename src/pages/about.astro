@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { getRolls } from '../lib/rolls';
+import portrait from '../assets/photos/roll-005/10.jpg';
 
 const rolls = await getRolls();
 const frames = rolls.reduce((n, r) => n + r.data.exposures.length, 0);
@@ -10,26 +12,40 @@ const coffeeUrl = 'https://buymeacoffee.com/jesmith4evb';
 
 <Base title="About" compact>
   <section class="about">
-    <h1>Mostly out of focus</h1>
-    <p>
-      Jamm is the two of us — Samm and me — with a couple of old film cameras and
-      not much idea what we're doing. We travel where we can, load a roll, and point
-      the cameras at whatever the day puts in front of us.
-    </p>
-    <p>
-      We are not good at this, and that turns out to be most of the fun. Exposures
-      come back too dark or too bright, focus is a running argument with the lens,
-      and every so often a whole frame is just black. We show each roll whole, in the
-      order it was shot — the misses left in next to the few that landed.
-    </p>
-    <p>
-      If any of it makes you smile, you can buy us a coffee. Leave a note with what we
-      should spend it on — a real coffee, a cold beer, a pastry from wherever we've
-      ended up — and we'll photograph it and slip it into a roll.
-    </p>
-    <a class="about__coffee" href={coffeeUrl} target="_blank" rel="noopener noreferrer">
-      Buy us a coffee →
-    </a>
+    <h1 class="about__title">About</h1>
+
+    <div class="about__intro">
+      <div class="about__body">
+        <p>
+          Jamm is Jeremy, Samm, and a refurbished Minolta X-700 that we picked up
+          before we left Atlanta to travel around Europe for the summer.
+        </p>
+        <p>
+          We don't know what we're doing and that's the most fun part. Exposures come back
+          too dark, too bright, mostly out of focus. Jeremy thinks the "focusing plate" is out of wack
+          but we don't have an easy way to fix it on the move. We're uploading each roll whole, in the
+          order it was shot with the misses left in next to the few that hit. Hopefully,
+          we get better as the weeks roll on.
+        </p>
+        <p>
+          If you want to take part, we set up a "Buy Me a Coffee" account. You 
+          can send some money and a note with what we should spend it on and we'll
+          photograph it and post it with the next roll.
+        </p>
+        <a class="about__coffee" href={coffeeUrl} target="_blank" rel="noopener noreferrer">
+          Buy Me a Coffee →
+        </a>
+      </div>
+
+      <figure class="about__figure">
+        <Image
+          src={portrait}
+          alt="A hand holding a small glass jar of coffee up behind the leaves of a plant in a café window."
+          widths={[480, 720, 1080]}
+          sizes="(max-width: 60rem) 100vw, 22rem"
+        />
+      </figure>
+    </div>
 
     <dl class="colophon">
       <div>
@@ -41,16 +57,8 @@ const coffeeUrl = 'https://buymeacoffee.com/jesmith4evb';
         <dd>{frames} frames</dd>
       </div>
       <div>
-        <dt>Set in</dt>
-        <dd>Space Grotesk &amp; Space Mono</dd>
-      </div>
-      <div>
-        <dt>Built with</dt>
-        <dd><a href="https://astro.build">Astro</a></dd>
-      </div>
-      <div>
         <dt>Contact</dt>
-        <dd><a href="mailto:hello@jamm.photography">hello@jamm.photography</a></dd>
+        <dd><a href="mailto:jesmith4ever@gmail.com">jesmith4ever@gmail.com</a></dd>
       </div>
     </dl>
   </section>

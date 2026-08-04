@@ -7,7 +7,7 @@ exposures:
     title: 'Preroll 1'
     image: ../../assets/photos/roll-005/00.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Berlin, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -18,7 +18,7 @@ exposures:
     title: 'Frame 1'
     image: ../../assets/photos/roll-005/01.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Berlin, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -29,7 +29,7 @@ exposures:
     title: 'Frame 2'
     image: ../../assets/photos/roll-005/02.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Berlin, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -40,7 +40,7 @@ exposures:
     title: 'Frame 3'
     image: ../../assets/photos/roll-005/03.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Berlin, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -51,7 +51,7 @@ exposures:
     title: 'Frame 4'
     image: ../../assets/photos/roll-005/04.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Berlin, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -62,7 +62,7 @@ exposures:
     title: 'Frame 5'
     image: ../../assets/photos/roll-005/05.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Berlin, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -73,7 +73,7 @@ exposures:
     title: 'Frame 6'
     image: ../../assets/photos/roll-005/06.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Spreewald, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -84,7 +84,7 @@ exposures:
     title: 'Frame 7'
     image: ../../assets/photos/roll-005/07.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Spreewald, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -95,7 +95,7 @@ exposures:
     title: 'Frame 8'
     image: ../../assets/photos/roll-005/08.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Spreewald, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -106,7 +106,7 @@ exposures:
     title: 'Frame 9'
     image: ../../assets/photos/roll-005/09.jpg
     alt: ''
-    location: 'Prague, Czechia'
+    location: 'Spreewald, Germany'
     date: 2026-07-13
     camera: 'Minolta X-700'
     lens: '45mm Stock'
