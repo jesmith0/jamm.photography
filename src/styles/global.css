@@ -445,6 +445,11 @@ button {
 }
 
 @media (max-width: 760px) {
+  .lightbox {
+    /* shared by the control bar's own height and the scroll padding below,
+       so the two can never drift out of sync with each other */
+    --lb-bar-h: calc(max(1rem, env(safe-area-inset-bottom)) + 3rem + 1rem);
+  }
   .lightbox__inner {
     /* stacked layout wants the full screen width, unlike the desktop pair */
     width: 100%;
@@ -453,6 +458,16 @@ button {
     gap: 1rem;
     max-height: 100%;
     overflow-y: auto;
+    /* scrolling stays on — just the scrollbar itself, which would otherwise
+       run down over a portrait photo, is hidden */
+    scrollbar-width: none;
+    /* without this, the last row (the date) stays permanently hidden behind
+       the control bar no matter how far you scroll — the bar sits on top
+       of the scrolled content rather than being part of it */
+    padding-bottom: var(--lb-bar-h);
+  }
+  .lightbox__inner::-webkit-scrollbar {
+    display: none;
   }
   .lightbox__img {
     max-height: 64vh;
@@ -466,7 +481,7 @@ button {
     position: absolute;
     inset-inline: 0;
     bottom: 0;
-    height: calc(max(1rem, env(safe-area-inset-bottom)) + 3rem + 1rem);
+    height: var(--lb-bar-h);
     background: #0a0a0a;
     border-top: 1px solid #262626;
   }
