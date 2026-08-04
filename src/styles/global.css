@@ -428,15 +428,47 @@ button {
    ============================================================ */
 .about {
   padding-block: clamp(2.5rem, 7vw, 6rem);
+}
+/* The visible heading is gone by design; keep one for document structure. */
+.about__title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/* Text column with the photo alongside it; stacks under the text on narrow screens.
+   The photo column takes all the space the text leaves, and the capped figure is
+   centred inside it — so the frame sits in the middle of that slack rather than
+   hugging either the text or the far edge. */
+.about__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 60ch) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+.about__body {
   max-width: 60ch;
 }
-.about h1 {
-  font-size: var(--step-2);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+.about__figure {
+  margin: 0;
+  max-width: 22rem;
+  margin-inline: auto;
+}
+.about__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 60rem) {
+  .about__intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* Stacked: line the frame up with the text's left edge instead of centring. */
+  .about__figure {
+    margin-inline: 0;
+  }
 }
 .about p {
   font-size: var(--step-1);
