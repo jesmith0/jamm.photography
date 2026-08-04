@@ -100,7 +100,14 @@
     function open(i: number) {
       lastFocus = document.activeElement as HTMLElement;
       render(i);
-      if (!dialog!.open) dialog!.showModal();
+      if (!dialog!.open) {
+        dialog!.showModal();
+        // belt-and-suspenders: a modal dialog doesn't lock page scroll on
+        // its own, and on mobile a touch-drag that finds nothing to scroll
+        // inside the dialog can fall through to the page behind it
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+      }
       // focus the dialog itself, not whichever control the browser would
       // otherwise auto-focus — so arrow-key navigation never lands on / lights
       // up a button the visitor didn't actually mean to interact with
@@ -175,6 +182,8 @@
     dialog.addEventListener('close', () => {
       history.replaceState(null, '', location.pathname + location.search);
       img.removeAttribute('src');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
       lastFocus?.focus?.();
     });
 

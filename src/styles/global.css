@@ -287,6 +287,11 @@ button {
   background: transparent;
   color: #ededed;
   overscroll-behavior: contain;
+  /* the UA stylesheet also makes a modal dialog scrollable in its own
+     right; with nothing to scroll, that empty scroll container just lets
+     touch-drags fall through to the page behind it — .lightbox__inner is
+     the only element that should ever scroll here */
+  overflow: hidden;
 }
 .lightbox::backdrop {
   background: rgba(6, 6, 6, 0.95);
@@ -299,6 +304,9 @@ button {
 }
 .lightbox__controlbar {
   display: none;
+  /* purely a visual backing for the buttons drawn over it — must not steal
+     touches from the scrollable content underneath it */
+  pointer-events: none;
 }
 .lightbox[open] {
   display: flex;
