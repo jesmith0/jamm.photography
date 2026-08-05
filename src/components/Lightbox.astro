@@ -5,6 +5,7 @@
 ---
 
 <dialog id="lightbox" class="lightbox" aria-label="Photograph viewer" tabindex="-1">
+  <div class="lightbox__loader" data-lb-loader aria-hidden="true"></div>
   <div class="lightbox__controlbar" aria-hidden="true"></div>
   <button class="lightbox__close" data-lb-close type="button" aria-label="Close (Esc)">✕</button>
   <button class="lightbox__nav lightbox__nav--prev" data-lb-prev type="button" aria-label="Previous exposure">
@@ -72,10 +73,78 @@
 
     const rollOf = (i: number) => triggers[i]?.dataset.roll;
 
+    // ---- loading ------------------------------------------------------
+    // The full-size frame is fetched off to the side and only swapped in once
+    // it has decoded, so the <img> never blanks out mid-navigation (an empty
+    // <img> collapses to nothing and the whole frame jumps, which is most of
+    // what reads as "lag"). Until it lands the outgoing photo is dimmed right
+    // back and a hairline sweeps the top edge.
+    const loaderDelayMs = 120;
+    const prefetched = new Set<string>();
+    let loadToken = 0;
+    let loaderTimer: number | undefined;
+
+    function setLoading(on: boolean) {
+      window.clearTimeout(loaderTimer);
+      if (!on) {
+        dialog!.classList.remove('is-loading');
+        return;
+      }
+      // hold off briefly: a cached frame swaps instantly and shouldn't flash
+      loaderTimer = window.setTimeout(
+        () => dialog!.classList.add('is-loading'),
+        loaderDelayMs,
+      );
+    }
+
+    /** Warm the neighbouring frames so sequential swiping has nothing to wait for. */
+    function prefetchNeighbours(i: number) {
+      if ((navigator as any).connection?.saveData) return;
+      for (const delta of [1, -1]) {
+        const j = i + delta;
+        if (j < 0 || j >= triggers.length || rollOf(j) !== rollOf(i)) continue;
+        const url = triggers[j].dataset.full;
+        if (!url || prefetched.has(url)) continue;
+        prefetched.add(url);
+        new Image().src = url;
+      }
+    }
+
+    function showPhoto(url: string, alt: string, i: number) {
+      const token = ++loadToken;
+      let settled = false;
+      setLoading(true);
+
+      const commit = () => {
+        // a later swipe already superseded this frame — drop it
+        if (settled || token !== loadToken) return;
+        settled = true;
+        img.src = url;
+        img.alt = alt;
+        setLoading(false);
+        prefetchNeighbours(i);
+      };
+
+      const pre = new Image();
+      pre.addEventListener(
+        'load',
+        () => {
+          // decode before swapping so the paint itself can't stutter
+          if (typeof pre.decode === 'function') pre.decode().then(commit, commit);
+          else commit();
+        },
+        { once: true },
+      );
+      // a broken frame still needs to hand over to the <img>, which shows
+      // its own alt text rather than leaving the loader spinning forever
+      pre.addEventListener('error', commit, { once: true });
+      pre.src = url;
+      if (pre.complete) commit(); // already cached: 'load' may never fire
+    }
+
     function render(i: number) {
       const d = triggers[i].dataset;
-      img.src = d.full || '';
-      img.alt = d.alt || d.title || '';
+      showPhoto(d.full || '', d.alt || d.title || '', i);
       elRollExp.textContent = `Roll ${d.roll} — Exp ${d.frame}`;
       elTitle.textContent = d.title || '';
       elPlace.textContent = d.location || '';
@@ -229,6 +298,9 @@
     });
     dialog.addEventListener('close', () => {
       history.replaceState(null, '', location.pathname + location.search);
+      // invalidate any frame still in flight so it can't land after closing
+      loadToken++;
+      setLoading(false);
       img.removeAttribute('src');
       lastFocus?.focus?.();
     });

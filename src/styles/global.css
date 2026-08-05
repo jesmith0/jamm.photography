@@ -339,6 +339,60 @@ button {
      over explicitly by the swipe handler in Lightbox.astro, which calls
      preventDefault() as soon as it locks the gesture to the x axis */
   touch-action: pan-y pinch-zoom;
+  transition: opacity 0.22s var(--ease);
+}
+
+/* ---------- loading the next frame ----------
+   The incoming photo is decoded before it's swapped in (see Lightbox.astro),
+   so this covers the gap: the outgoing frame falls back to a dim ghost that
+   holds the layout, and a hairline sweeps the top edge of the overlay. */
+.lightbox.is-loading .lightbox__img {
+  opacity: 0.12;
+}
+.lightbox__loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease);
+}
+.lightbox.is-loading .lightbox__loader {
+  opacity: 1;
+}
+.lightbox__loader::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  width: 24%;
+  background: #ededed;
+}
+.lightbox.is-loading .lightbox__loader::after {
+  /* alternate so the bar tracks back and forth like a scanner head and is
+     never off screen — a one-way sweep leaves a third of every cycle blank */
+  animation: lb-sweep 1.15s ease-in-out infinite alternate;
+}
+@keyframes lb-sweep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* 316.667% of a 24%-wide bar lands its right edge exactly at 100% */
+    transform: translateX(316.667%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* the global reduce rule only clamps durations, which would turn an
+     infinite sweep into a flicker — show a still bar instead */
+  .lightbox.is-loading .lightbox__loader::after {
+    animation: none;
+    transform: none;
+    width: 100%;
+    opacity: 0.55;
+  }
 }
 .lightbox__meta {
   align-self: start;
