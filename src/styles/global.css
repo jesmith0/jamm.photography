@@ -335,9 +335,13 @@ button {
   width: auto;
   height: auto;
   object-fit: contain;
-  /* let vertical scroll/pinch pass through natively; horizontal drags are
-     read by the swipe-to-navigate handler in Lightbox.astro instead */
-  touch-action: pan-y;
+  /* fully hand off gesture recognition on the photo to JS — pan-y let the
+     browser natively claim a drag the moment it saw a vertical component
+     (real fingers are never perfectly horizontal), cancelling the swipe
+     handler in Lightbox.astro before it ever saw the gesture. Scrolling the
+     caption/specs still works natively — just start the drag on that text,
+     not the photo. */
+  touch-action: none;
 }
 .lightbox__meta {
   align-self: start;
@@ -458,6 +462,10 @@ button {
     gap: 1rem;
     max-height: 100%;
     overflow-y: auto;
+    /* this is the element that actually scrolls on mobile — `contain` has
+       to live here, not on .lightbox, or dragging past the top/bottom of
+       the metadata chains straight through to the page behind the modal */
+    overscroll-behavior: contain;
     /* scrolling stays on — just the scrollbar itself, which would otherwise
        run down over a portrait photo, is hidden */
     scrollbar-width: none;
