@@ -335,13 +335,10 @@ button {
   width: auto;
   height: auto;
   object-fit: contain;
-  /* fully hand off gesture recognition on the photo to JS — pan-y let the
-     browser natively claim a drag the moment it saw a vertical component
-     (real fingers are never perfectly horizontal), cancelling the swipe
-     handler in Lightbox.astro before it ever saw the gesture. Scrolling the
-     caption/specs still works natively — just start the drag on that text,
-     not the photo. */
-  touch-action: none;
+  /* vertical panning and pinch-zoom stay native; horizontal drags are taken
+     over explicitly by the swipe handler in Lightbox.astro, which calls
+     preventDefault() as soon as it locks the gesture to the x axis */
+  touch-action: pan-y pinch-zoom;
 }
 .lightbox__meta {
   align-self: start;

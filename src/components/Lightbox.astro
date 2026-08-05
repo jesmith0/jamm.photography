@@ -55,7 +55,7 @@
     const prevBtn = dialog.querySelector('[data-lb-prev]') as HTMLButtonElement;
     const nextBtn = dialog.querySelector('[data-lb-next]') as HTMLButtonElement;
     const closeBtn = dialog.querySelector('[data-lb-close]') as HTMLButtonElement;
-    const figure = dialog.querySelector('.lightbox__figure') as HTMLElement;
+    const swipeArea = dialog.querySelector('.lightbox__inner') as HTMLElement;
 
     // Location is shown under the title, so it's not repeated here.
     const SPECS: [string, string][] = [
@@ -125,43 +125,98 @@
     prevBtn.addEventListener('click', () => step(-1));
     nextBtn.addEventListener('click', () => step(1));
 
-    // swipe left/right over the photo to step through the roll — touch and
-    // pen only, so a mouse drag still just falls through to backdrop-click-
-    // to-close and text selection in the meta panel is untouched
-    const SWIPE_THRESHOLD = 40;
-    let dragId: number | null = null;
-    let dragStartX = 0;
-    let dragStartY = 0;
-    let dragDeltaX = 0;
+    // Swipe left/right to step through the roll.
+    //
+    // Touch events rather than pointer events, and deliberately non-passive:
+    // preventDefault() on the first horizontal move is the only thing that
+    // stops the browser claiming the drag as a native scroll and killing it
+    // with a pointercancel long before it reaches the distance threshold.
+    // Passive listeners silently ignore preventDefault, hence the explicit
+    // { passive: false }.
+    const SWIPE_THRESHOLD = 45; // px of travel that commits to a step
+    const AXIS_LOCK = 10; // px before we decide horizontal vs vertical
 
-    figure.addEventListener('pointerdown', (ev) => {
-      if (ev.pointerType === 'mouse') return;
-      dragId = ev.pointerId;
-      dragStartX = ev.clientX;
-      dragStartY = ev.clientY;
-      dragDeltaX = 0;
-    });
-    figure.addEventListener('pointermove', (ev) => {
-      if (dragId !== ev.pointerId) return;
-      dragDeltaX = ev.clientX - dragStartX;
-      const deltaY = ev.clientY - dragStartY;
-      if (Math.abs(dragDeltaX) > Math.abs(deltaY)) {
-        img.style.transition = 'none';
-        img.style.transform = `translateX(${dragDeltaX}px)`;
-      }
-    });
-    const endDrag = (ev: PointerEvent) => {
-      if (dragId !== ev.pointerId) return;
-      dragId = null;
+    let touchId: number | null = null;
+    let startX = 0;
+    let startY = 0;
+    let deltaX = 0;
+    let axis: 'x' | 'y' | null = null;
+    let lastSwipeAt = 0;
+
+    const activeTouch = (list: TouchList) =>
+      Array.from(list).find((t) => t.identifier === touchId);
+
+    function clearDrag() {
+      touchId = null;
+      axis = null;
+      deltaX = 0;
       img.style.transition = '';
       img.style.transform = '';
-      if (Math.abs(dragDeltaX) > SWIPE_THRESHOLD) step(dragDeltaX < 0 ? 1 : -1);
-    };
-    figure.addEventListener('pointerup', endDrag);
-    figure.addEventListener('pointercancel', endDrag);
+    }
+
+    // the whole overlay is the swipe surface, not just the photo's own pixels
+    // — .lightbox__figure is display:contents and so has no box of its own,
+    // and a portrait frame leaves wide dead margins either side of the image
+    swipeArea.addEventListener(
+      'touchstart',
+      (ev) => {
+        if (ev.touches.length !== 1) {
+          clearDrag(); // a second finger means pinch-zoom, not a swipe
+          return;
+        }
+        const t = ev.changedTouches[0];
+        touchId = t.identifier;
+        startX = t.clientX;
+        startY = t.clientY;
+        deltaX = 0;
+        axis = null;
+      },
+      { passive: true },
+    );
+
+    swipeArea.addEventListener(
+      'touchmove',
+      (ev) => {
+        if (touchId === null) return;
+        const t = activeTouch(ev.touches);
+        if (!t) return;
+
+        deltaX = t.clientX - startX;
+        const dy = t.clientY - startY;
+
+        if (axis === null) {
+          // wait for enough travel to tell a swipe from a scroll
+          if (Math.abs(deltaX) < AXIS_LOCK && Math.abs(dy) < AXIS_LOCK) return;
+          axis = Math.abs(deltaX) > Math.abs(dy) ? 'x' : 'y';
+        }
+        // vertical gesture: leave it alone so the metadata scrolls natively
+        if (axis !== 'x') return;
+
+        if (ev.cancelable) ev.preventDefault();
+        img.style.transition = 'none';
+        img.style.transform = `translateX(${deltaX}px)`;
+      },
+      { passive: false },
+    );
+
+    function endTouch() {
+      if (touchId === null) return;
+      const committed = axis === 'x' && Math.abs(deltaX) > SWIPE_THRESHOLD;
+      const direction = deltaX < 0 ? 1 : -1;
+      clearDrag();
+      if (committed) {
+        lastSwipeAt = Date.now();
+        step(direction);
+      }
+    }
+    swipeArea.addEventListener('touchend', endTouch);
+    swipeArea.addEventListener('touchcancel', endTouch);
 
     // click the dark area outside the content to close
     dialog.addEventListener('click', (ev) => {
+      // a swipe ending over the backdrop synthesises a click — don't let it
+      // close the overlay the visitor was only navigating through
+      if (Date.now() - lastSwipeAt < 500) return;
       if (ev.target === dialog || ev.target === img.closest('.lightbox__inner')) dialog.close();
     });
     dialog.addEventListener('keydown', (ev) => {
