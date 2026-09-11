@@ -7,7 +7,7 @@ exposures:
     title: 'Preroll 1'
     image: ../../assets/photos/roll-008/00.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -18,7 +18,7 @@ exposures:
     title: 'Frame 1'
     image: ../../assets/photos/roll-008/01.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -29,7 +29,7 @@ exposures:
     title: 'Frame 2'
     image: ../../assets/photos/roll-008/02.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -40,7 +40,7 @@ exposures:
     title: 'Frame 3'
     image: ../../assets/photos/roll-008/03.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -51,7 +51,7 @@ exposures:
     title: 'Frame 4'
     image: ../../assets/photos/roll-008/04.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -62,7 +62,7 @@ exposures:
     title: 'Frame 5'
     image: ../../assets/photos/roll-008/05.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -73,7 +73,7 @@ exposures:
     title: 'Frame 6'
     image: ../../assets/photos/roll-008/06.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -84,7 +84,7 @@ exposures:
     title: 'Frame 7'
     image: ../../assets/photos/roll-008/07.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -95,7 +95,7 @@ exposures:
     title: 'Frame 8'
     image: ../../assets/photos/roll-008/08.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -106,7 +106,7 @@ exposures:
     title: 'Frame 9'
     image: ../../assets/photos/roll-008/09.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -117,7 +117,7 @@ exposures:
     title: 'Frame 10'
     image: ../../assets/photos/roll-008/10.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -128,7 +128,7 @@ exposures:
     title: 'Frame 11'
     image: ../../assets/photos/roll-008/11.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -139,7 +139,7 @@ exposures:
     title: 'Frame 12'
     image: ../../assets/photos/roll-008/12.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -150,7 +150,7 @@ exposures:
     title: 'Frame 13'
     image: ../../assets/photos/roll-008/13.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -161,7 +161,7 @@ exposures:
     title: 'Frame 14'
     image: ../../assets/photos/roll-008/14.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -172,7 +172,7 @@ exposures:
     title: 'Frame 15'
     image: ../../assets/photos/roll-008/15.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -315,7 +315,7 @@ exposures:
     title: 'Frame 28'
     image: ../../assets/photos/roll-008/28.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -326,7 +326,7 @@ exposures:
     title: 'Frame 29'
     image: ../../assets/photos/roll-008/29.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -337,7 +337,7 @@ exposures:
     title: 'Frame 30'
     image: ../../assets/photos/roll-008/30.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -348,7 +348,7 @@ exposures:
     title: 'Frame 31'
     image: ../../assets/photos/roll-008/31.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -359,7 +359,7 @@ exposures:
     title: 'Frame 32'
     image: ../../assets/photos/roll-008/32.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -370,7 +370,7 @@ exposures:
     title: 'Frame 33'
     image: ../../assets/photos/roll-008/33.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -381,7 +381,7 @@ exposures:
     title: 'Frame 34'
     image: ../../assets/photos/roll-008/34.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -392,7 +392,7 @@ exposures:
     title: 'Frame 35'
     image: ../../assets/photos/roll-008/35.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -403,7 +403,7 @@ exposures:
     title: 'Frame 36'
     image: ../../assets/photos/roll-008/36.jpg
     alt: ''
-    location: 'Bristol, England'
+    location: 'Bath, England'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'

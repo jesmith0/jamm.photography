@@ -7,7 +7,7 @@ exposures:
     title: 'Preroll 1'
     image: ../../assets/photos/roll-009/00.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Málaga, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -18,7 +18,7 @@ exposures:
     title: 'Frame 1'
     image: ../../assets/photos/roll-009/01.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Málaga, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -29,7 +29,7 @@ exposures:
     title: 'Frame 2'
     image: ../../assets/photos/roll-009/02.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Málaga, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -40,7 +40,7 @@ exposures:
     title: 'Frame 3'
     image: ../../assets/photos/roll-009/03.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Málaga, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -51,7 +51,7 @@ exposures:
     title: 'Frame 4'
     image: ../../assets/photos/roll-009/04.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -62,7 +62,7 @@ exposures:
     title: 'Frame 5'
     image: ../../assets/photos/roll-009/05.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -73,7 +73,7 @@ exposures:
     title: 'Frame 6'
     image: ../../assets/photos/roll-009/06.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -84,7 +84,7 @@ exposures:
     title: 'Frame 7'
     image: ../../assets/photos/roll-009/07.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -95,7 +95,7 @@ exposures:
     title: 'Frame 8'
     image: ../../assets/photos/roll-009/08.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -106,7 +106,7 @@ exposures:
     title: 'Frame 9'
     image: ../../assets/photos/roll-009/09.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -117,7 +117,7 @@ exposures:
     title: 'Frame 10'
     image: ../../assets/photos/roll-009/10.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -128,7 +128,7 @@ exposures:
     title: 'Frame 11'
     image: ../../assets/photos/roll-009/11.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -139,7 +139,7 @@ exposures:
     title: 'Frame 12'
     image: ../../assets/photos/roll-009/12.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -150,7 +150,7 @@ exposures:
     title: 'Frame 13'
     image: ../../assets/photos/roll-009/13.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Valencia, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -161,7 +161,7 @@ exposures:
     title: 'Frame 14'
     image: ../../assets/photos/roll-009/14.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -172,7 +172,7 @@ exposures:
     title: 'Frame 15'
     image: ../../assets/photos/roll-009/15.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -183,7 +183,7 @@ exposures:
     title: 'Frame 16'
     image: ../../assets/photos/roll-009/16.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -194,7 +194,7 @@ exposures:
     title: 'Frame 17'
     image: ../../assets/photos/roll-009/17.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -205,7 +205,7 @@ exposures:
     title: 'Frame 18'
     image: ../../assets/photos/roll-009/18.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -216,7 +216,7 @@ exposures:
     title: 'Frame 19'
     image: ../../assets/photos/roll-009/19.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -227,7 +227,7 @@ exposures:
     title: 'Frame 20'
     image: ../../assets/photos/roll-009/20.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -238,7 +238,7 @@ exposures:
     title: 'Frame 21'
     image: ../../assets/photos/roll-009/21.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -249,7 +249,7 @@ exposures:
     title: 'Frame 22'
     image: ../../assets/photos/roll-009/22.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -260,7 +260,7 @@ exposures:
     title: 'Frame 23'
     image: ../../assets/photos/roll-009/23.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -271,7 +271,7 @@ exposures:
     title: 'Frame 24'
     image: ../../assets/photos/roll-009/24.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -282,7 +282,7 @@ exposures:
     title: 'Frame 25'
     image: ../../assets/photos/roll-009/25.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -293,7 +293,7 @@ exposures:
     title: 'Frame 26'
     image: ../../assets/photos/roll-009/26.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Madrid, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -304,7 +304,7 @@ exposures:
     title: 'Frame 27'
     image: ../../assets/photos/roll-009/27.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -315,7 +315,7 @@ exposures:
     title: 'Frame 28'
     image: ../../assets/photos/roll-009/28.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -326,7 +326,7 @@ exposures:
     title: 'Frame 29'
     image: ../../assets/photos/roll-009/29.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -337,7 +337,7 @@ exposures:
     title: 'Frame 30'
     image: ../../assets/photos/roll-009/30.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -348,7 +348,7 @@ exposures:
     title: 'Frame 31'
     image: ../../assets/photos/roll-009/31.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -359,7 +359,7 @@ exposures:
     title: 'Frame 32'
     image: ../../assets/photos/roll-009/32.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -370,7 +370,7 @@ exposures:
     title: 'Frame 33'
     image: ../../assets/photos/roll-009/33.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -381,7 +381,7 @@ exposures:
     title: 'Frame 34'
     image: ../../assets/photos/roll-009/34.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Bilbao, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -392,7 +392,7 @@ exposures:
     title: 'Frame 35'
     image: ../../assets/photos/roll-009/35.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Barcelona, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
@@ -403,7 +403,7 @@ exposures:
     title: 'Frame 36'
     image: ../../assets/photos/roll-009/36.jpg
     alt: ''
-    location: 'Spain'
+    location: 'Barcelona, Spain'
     date: 2026-09-05
     camera: 'Minolta X-700'
     lens: '45mm Stock'
