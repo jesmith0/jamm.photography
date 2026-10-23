@@ -8,7 +8,7 @@ exposures:
     image: ../../assets/photos/roll-010/00.jpg
     alt: ''
     location: 'Barcelona, Spain'
-    date: 2026-10-08
+    date: 2026-08-24
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -19,7 +19,7 @@ exposures:
     image: ../../assets/photos/roll-010/01.jpg
     alt: ''
     location: 'Barcelona, Spain'
-    date: 2026-10-08
+    date: 2026-08-24
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -30,7 +30,7 @@ exposures:
     image: ../../assets/photos/roll-010/02.jpg
     alt: ''
     location: 'Barcelona, Spain'
-    date: 2026-10-08
+    date: 2026-08-24
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -41,7 +41,7 @@ exposures:
     image: ../../assets/photos/roll-010/03.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -52,7 +52,7 @@ exposures:
     image: ../../assets/photos/roll-010/04.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -63,7 +63,7 @@ exposures:
     image: ../../assets/photos/roll-010/05.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -74,7 +74,7 @@ exposures:
     image: ../../assets/photos/roll-010/06.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -85,7 +85,7 @@ exposures:
     image: ../../assets/photos/roll-010/07.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -96,7 +96,7 @@ exposures:
     image: ../../assets/photos/roll-010/08.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -118,7 +118,7 @@ exposures:
     image: ../../assets/photos/roll-010/10.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -129,7 +129,7 @@ exposures:
     image: ../../assets/photos/roll-010/11.jpg
     alt: ''
     location: 'Tossa de Mar, Spain'
-    date: 2026-10-08
+    date: 2026-08-29
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -140,7 +140,7 @@ exposures:
     image: ../../assets/photos/roll-010/12.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -151,7 +151,7 @@ exposures:
     image: ../../assets/photos/roll-010/13.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -162,7 +162,7 @@ exposures:
     image: ../../assets/photos/roll-010/14.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -173,7 +173,7 @@ exposures:
     image: ../../assets/photos/roll-010/15.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -184,7 +184,7 @@ exposures:
     image: ../../assets/photos/roll-010/16.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -195,7 +195,7 @@ exposures:
     image: ../../assets/photos/roll-010/17.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -206,7 +206,7 @@ exposures:
     image: ../../assets/photos/roll-010/18.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -217,7 +217,7 @@ exposures:
     image: ../../assets/photos/roll-010/19.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -228,7 +228,7 @@ exposures:
     image: ../../assets/photos/roll-010/20.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -239,7 +239,7 @@ exposures:
     image: ../../assets/photos/roll-010/21.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -250,7 +250,7 @@ exposures:
     image: ../../assets/photos/roll-010/22.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -261,7 +261,7 @@ exposures:
     image: ../../assets/photos/roll-010/23.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -272,7 +272,7 @@ exposures:
     image: ../../assets/photos/roll-010/24.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -283,7 +283,7 @@ exposures:
     image: ../../assets/photos/roll-010/25.jpg
     alt: ''
     location: 'Athens, Greece'
-    date: 2026-10-08
+    date: 2026-09-02
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -294,7 +294,7 @@ exposures:
     image: ../../assets/photos/roll-010/26.jpg
     alt: ''
     location: 'Paros, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -305,7 +305,7 @@ exposures:
     image: ../../assets/photos/roll-010/27.jpg
     alt: ''
     location: 'Paros, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -316,7 +316,7 @@ exposures:
     image: ../../assets/photos/roll-010/28.jpg
     alt: ''
     location: 'Paros, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -327,7 +327,7 @@ exposures:
     image: ../../assets/photos/roll-010/29.jpg
     alt: ''
     location: 'Paros, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -338,7 +338,7 @@ exposures:
     image: ../../assets/photos/roll-010/30.jpg
     alt: ''
     location: 'Naxos, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -349,7 +349,7 @@ exposures:
     image: ../../assets/photos/roll-010/31.jpg
     alt: ''
     location: 'Naxos, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -360,7 +360,7 @@ exposures:
     image: ../../assets/photos/roll-010/32.jpg
     alt: ''
     location: 'Naxos, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -371,7 +371,7 @@ exposures:
     image: ../../assets/photos/roll-010/33.jpg
     alt: ''
     location: 'Naxos, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -382,7 +382,7 @@ exposures:
     image: ../../assets/photos/roll-010/34.jpg
     alt: ''
     location: 'Naxos, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -393,7 +393,7 @@ exposures:
     image: ../../assets/photos/roll-010/35.jpg
     alt: ''
     location: 'Naxos, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
@@ -404,7 +404,7 @@ exposures:
     image: ../../assets/photos/roll-010/36.jpg
     alt: ''
     location: 'Naxos, Greece'
-    date: 2026-10-08
+    date: 2026-09-07
     camera: 'Minolta X-700'
     lens: '45mm Stock'
     aperture: 'auto'
