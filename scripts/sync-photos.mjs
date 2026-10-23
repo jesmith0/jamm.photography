@@ -75,11 +75,30 @@ do {
   ContinuationToken = page.IsTruncated ? page.NextContinuationToken : undefined;
 } while (ContinuationToken);
 
+const CONCURRENCY = 8;
+const ATTEMPTS = 3;
+// A stalled body stream can hang with no error, so each download gets a hard deadline.
+const DOWNLOAD_TIMEOUT_MS = 120_000;
+
 let downloaded = 0;
 let skipped = 0;
 
-for (const { Key, Size } of objects) {
-  if (Key.endsWith('/')) continue; // folder placeholder
+async function download(Key, dest) {
+  for (let attempt = 1; ; attempt++) {
+    const signal = AbortSignal.timeout(DOWNLOAD_TIMEOUT_MS);
+    try {
+      const res = await client.send(new GetObjectCommand({ Bucket: R2_BUCKET, Key }), { abortSignal: signal });
+      await pipeline(res.Body, createWriteStream(dest), { signal });
+      return;
+    } catch (err) {
+      if (attempt >= ATTEMPTS) throw new Error(`failed to download ${Key} after ${ATTEMPTS} attempts`, { cause: err });
+      console.warn(`  ! ${Key}: ${err.name ?? err} — retrying (${attempt}/${ATTEMPTS - 1})`);
+    }
+  }
+}
+
+async function sync({ Key, Size }) {
+  if (Key.endsWith('/')) return; // folder placeholder
 
   const rel = R2_PREFIX ? Key.slice(R2_PREFIX.length).replace(/^\//, '') : Key;
   const dest = path.join(assetsDir, rel);
@@ -87,21 +106,27 @@ for (const { Key, Size } of objects) {
   // Refuse to write outside the assets directory.
   if (!dest.startsWith(assetsDir + path.sep)) {
     console.warn(`  ! skipping key outside assets dir: ${Key}`);
-    continue;
+    return;
   }
 
   // Idempotent: skip if we already have a byte-identical copy.
   const existing = await fs.stat(dest).catch(() => null);
   if (existing && existing.size === Size) {
     skipped++;
-    continue;
+    return;
   }
 
   await fs.mkdir(path.dirname(dest), { recursive: true });
-  const res = await client.send(new GetObjectCommand({ Bucket: R2_BUCKET, Key }));
-  await pipeline(res.Body, createWriteStream(dest));
+  await download(Key, dest);
   downloaded++;
   console.log(`  ✓ ${rel}`);
 }
+
+const queue = [...objects];
+await Promise.all(
+  Array.from({ length: CONCURRENCY }, async () => {
+    while (queue.length) await sync(queue.shift());
+  }),
+);
 
 console.log(`\nR2 sync complete — ${downloaded} downloaded, ${skipped} already current (${objects.length} objects in ${R2_BUCKET}).`);
