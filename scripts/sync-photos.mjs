@@ -20,6 +20,7 @@ import { S3Client, ListObjectsV2Command, GetObjectCommand } from '@aws-sdk/clien
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import { createWriteStream } from 'node:fs';
+import { Transform } from 'node:stream';
 import { pipeline } from 'node:stream/promises';
 import { fileURLToPath } from 'node:url';
 
@@ -76,23 +77,45 @@ do {
 } while (ContinuationToken);
 
 const CONCURRENCY = 8;
-const ATTEMPTS = 3;
-// A stalled body stream can hang with no error, so each download gets a hard deadline.
-const DOWNLOAD_TIMEOUT_MS = 120_000;
+const ATTEMPTS = 5;
+// A stalled body stream can hang with no error, so abort when no bytes arrive for this long.
+// An idle limit rather than a total deadline lets slow-but-progressing downloads finish.
+const STALL_TIMEOUT_MS = 20_000;
 
 let downloaded = 0;
 let skipped = 0;
 
+async function fetchOnce(Key, dest) {
+  const controller = new AbortController();
+  let timer;
+  const kick = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => controller.abort(new Error(`stalled for ${STALL_TIMEOUT_MS / 1000}s`)), STALL_TIMEOUT_MS);
+  };
+  const watchdog = new Transform({
+    transform(chunk, _, cb) {
+      kick();
+      cb(null, chunk);
+    },
+  });
+
+  kick();
+  try {
+    const res = await client.send(new GetObjectCommand({ Bucket: R2_BUCKET, Key }), { abortSignal: controller.signal });
+    await pipeline(res.Body, watchdog, createWriteStream(dest), { signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function download(Key, dest) {
   for (let attempt = 1; ; attempt++) {
-    const signal = AbortSignal.timeout(DOWNLOAD_TIMEOUT_MS);
     try {
-      const res = await client.send(new GetObjectCommand({ Bucket: R2_BUCKET, Key }), { abortSignal: signal });
-      await pipeline(res.Body, createWriteStream(dest), { signal });
-      return;
+      return await fetchOnce(Key, dest);
     } catch (err) {
-      if (attempt >= ATTEMPTS) throw new Error(`failed to download ${Key} after ${ATTEMPTS} attempts`, { cause: err });
-      console.warn(`  ! ${Key}: ${err.name ?? err} — retrying (${attempt}/${ATTEMPTS - 1})`);
+      const reason = err.cause?.message ?? err.message ?? err;
+      if (attempt >= ATTEMPTS) throw new Error(`failed to download ${Key} after ${ATTEMPTS} attempts: ${reason}`);
+      console.warn(`  ! ${Key}: ${reason} — retrying (${attempt}/${ATTEMPTS - 1})`);
     }
   }
 }
